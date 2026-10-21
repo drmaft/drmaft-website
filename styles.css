@@ -696,3 +696,41 @@ img {
     transform: none;
   }
 }
+
+/* Position hero text and photo side by side */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-text {
+  min-width: 0;
+}
+
+.hero-photo {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.hero-photo img {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-photo {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
